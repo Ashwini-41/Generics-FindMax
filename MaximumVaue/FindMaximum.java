@@ -26,6 +26,7 @@ public class FindMaximum <T extends Comparable <T>>{
 	  return max;
 	}
 
+	//method to print maximum value
 	 public static <T> void printMax(T a , T b , T c, T max) {
 		 System.out.printf("Maximum Value among %s , %s, %s is : %s\n" , a, b , c, max);
 	 }
