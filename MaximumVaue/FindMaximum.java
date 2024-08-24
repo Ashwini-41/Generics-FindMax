@@ -2,8 +2,8 @@ package program.MaximumVaue;
 
 public class FindMaximum {
 	
-	public static Integer maximumNumber(Integer a , Integer b , Integer c) {
-		Integer max = a;
+	public static <E extends Comparable<E>> E maximumNumber (E a , E b , E c) {
+		E max = a;
 		
 		if(b.compareTo(max) > 0) {
 			max = b;
@@ -13,20 +13,7 @@ public class FindMaximum {
 		}
 	  return max;
 	}
-	
-	public static Float maximumNumber(Float af1, Float bf2, Float cf3) {
-	    Float max = af1;
-		
-		if(bf2.compareTo(max) > 0) {
-			max = bf2;
-		}
-		if(cf3.compareTo(max) > 0) {
-			max = cf3;
-		}
-	  return max;
-	
-	}
-	
+
 	public static String maxinumNumber(String as1, String bs2, String cs3) {
 		
          String max = as1;
@@ -40,6 +27,7 @@ public class FindMaximum {
 	  return max;
 	
 	}
+	
 
 	public static void main(String[] args) {
 		Integer a = 30 , b = 225, c = 500;
@@ -51,10 +39,9 @@ public class FindMaximum {
 		System.out.println("Maximum Float value is : " +ans2);
 		
 		String as1 = "Ashwini" , bs2 = "AditiJd" , cs3 = "Nivedita";
-		String ans3 = maxinumNumber(as1,bs2,cs3);
+     	String ans3 = maxinumNumber(as1,bs2,cs3);
 		System.out.println("Maximum String value is : " +ans3);
 		
 	}
-
 
 }
