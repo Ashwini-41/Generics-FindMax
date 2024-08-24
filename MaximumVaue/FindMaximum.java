@@ -1,9 +1,20 @@
 package program.MaximumVaue;
 
-public class FindMaximum {
-	
-	public static <E extends Comparable<E>> E maximumNumber (E a , E b , E c) {
-		E max = a;
+public class FindMaximum <T extends Comparable <T>>{
+	 T a , b , c;
+	 FindMaximum(T a , T b , T c){
+		 this.a = a;
+		 this.b = b;
+		 this.c = c;
+	 }
+	 
+	 public T testMaximum() {
+		return  FindMaximum.maximumNumber(a,b,c);
+	 }
+	 
+
+	public static <T extends Comparable<T>> T maximumNumber (T a , T b , T	 c) {
+		T max = a;
 		
 		if(b.compareTo(max) > 0) {
 			max = b;
@@ -11,36 +22,24 @@ public class FindMaximum {
 		if(c.compareTo(max) > 0) {
 			max = c;
 		}
+	  printMax(a,b,c , max);
 	  return max;
 	}
 
-	public static String maxinumNumber(String as1, String bs2, String cs3) {
-		
-         String max = as1;
-		
-		if(bs2.compareTo(max) > 0) {
-			max = bs2;
-		}
-		if(cs3.compareTo(max) > 0) {
-			max = cs3;
-		}
-	  return max;
-	
-	}
+	 public static <T> void printMax(T a , T b , T c, T max) {
+		 System.out.printf("Maximum Value among %s , %s, %s is : %s\n" , a, b , c, max);
+	 }
 	
 
 	public static void main(String[] args) {
 		Integer a = 30 , b = 225, c = 500;
-		Integer ans1 = maximumNumber(a,b,c);
-		System.out.println("Maximum Integer value is : " +ans1);
-		
-		Float af1 = 30.5f, bf2 = 45.5f, cf3 = 20.5f;
-		Float ans2 = maximumNumber(af1,bf2,cf3);
-		System.out.println("Maximum Float value is : " +ans2);
-		
+		Float af1 = 30.5f, bf2 = 45.5f, cf3 = 20.5f;	
 		String as1 = "Ashwini" , bs2 = "AditiJd" , cs3 = "Nivedita";
-     	String ans3 = maxinumNumber(as1,bs2,cs3);
-		System.out.println("Maximum String value is : " +ans3);
+		
+		new FindMaximum(a,b,c).testMaximum();
+		new FindMaximum(af1,bf2,cf3).testMaximum();
+		new FindMaximum(as1,bs2,cs3).testMaximum();
+		
 		
 	}
 
